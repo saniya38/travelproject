@@ -5,59 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Travel Solutions</title>
     <style>
-        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #343a40;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .hero {
+            background-image: url('travel.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        section {
+            padding: 2em;
+        }
+        .services, .contact {
+            display: flex;
+            justify-content: space-around;
+        }
+        .service, .contact-info {
+            width: 30%;
+            background-color: white;
+            padding: 1em;
+            margin: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #343a40;
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <!-- Your existing HTML structure -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact">
-            <div class="contact-info">
-                <h3>Address</h3>
-                <p>JPNCE TRavel Website</p>
-            </div>
-            <div class="contact-info">
-                <h3>Email</h3>
-                <p>info@corporatetravel.com</p>
-            </div>
-            <div class="contact-info">
-                <h3>Phone</h3>
-                <p>(123) 456-7890</p>
-            </div>
+
+<header>
+    <h1>Corporate Travel Solutions</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="index.html">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+    <h1>Your Trusted Travel Partner</h1>
+</div>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We specialize in providing comprehensive corporate travel solutions to meet your business needs. Our experienced team ensures seamless travel planning, booking, and management.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Flight Booking</h3>
+            <p>We offer competitive rates on flights worldwide. Our team ensures your business trips are booked efficiently.</p>
         </div>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
-    </section>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+        <div class="service">
+            <h3>Hotel Reservations</h3>
+            <p>Get the best deals on hotels with our extensive network of hotel partners.</p>
+        </div>
+        <div class="service">
+            <h3>Car Rentals</h3>
+            <p>Convenient car rental options are available at your destination to make your travel hassle-free.</p>
+        </div>
+    </div>
+</section>
 
-            const response = await fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, message }),
-            });
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+        <div class="contact-info">
+            <h3>Address</h3>
+            <p>123 Business St, Suite 100<br>Business City, BC 12345</p>
+        </div>
+        <div class="contact-info">
+            <h3>Email</h3>
+            <p>info@corporatetravel.com</p>
+        </div>
+        <div class="contact-info">
+            <h3>Phone</h3>
+            <p>(123) 456-7890</p>
+        </div>
+    </div>
+</section>
 
-            const result = await response.json();
-            alert(result.message);
-        });
-    </script>
+<footer>
+    <p>&copy; 2024 Corporate Travel Solutions. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
